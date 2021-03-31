@@ -1,0 +1,6 @@
+{
+  // 行位加分号
+  "semi": false,
+  // 是否单引号
+  "singleQuote": true
+}
