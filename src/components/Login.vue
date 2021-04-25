@@ -40,7 +40,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       loginForm: {
         username: 'admin',
@@ -61,15 +61,15 @@ export default {
   },
   methods: {
     // 重置表单
-    resetLoginForm() {
+    resetLoginForm () {
       console.log(this)
       this.$refs.loginFormRef.resetFields()
     },
-    login() {
+    login () {
       this.$refs.loginFormRef.validate(async (valid) => {
         if (!valid) return
         const { data: res } = await this.$http.post('login', this.loginForm)
-        console.log(res)
+        // console.log(res)
         if (res.meta.status !== 200) return this.$message.error('登录失败')
         this.$message.success('登录成功')
         // 1.将登陆成功后的token保存到客户端的sessionStorage中
